@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'listings',
     'realtors',
     'account',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'gebeya.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,10 +130,10 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT =  os.path.join(BASE_DIR, "static" , "static_root")
+STATIC_ROOT =  os.path.join(BASE_DIR, "static", "static_root")
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "gebeya/static"),
 ]
 
 
